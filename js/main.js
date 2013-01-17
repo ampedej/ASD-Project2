@@ -9,8 +9,8 @@ $('#home').on('pageinit', function(){
 			url: 'data/data.json',
 			type: 'get',
 			dataType: 'json',
-			success: function(response){
-				console.log(response);
+			success: function(result){
+				console.log(result);
 			}
 		})
 	});
