@@ -1,10 +1,10 @@
 /*
-Project 1
+Project 2
 Edward M Murray Jr
 ASD 1301
 */
 
-{ "recJson":[
+{ "recipes":[
 	{
 		"rname": ["Recipe Name:", "Chicken Parm"],
 		"dateadded": ["Date Added:", "10/16/2012"],

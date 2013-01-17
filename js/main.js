@@ -1,5 +1,5 @@
 /*
-Project 1
+Project 2
 Edward M Murray Jr
 ASD 1301
 */
@@ -9,8 +9,8 @@ $('#home').on('pageinit', function(){
 			url: 'xhr/data.json',
 			type: 'GET',
 			dataType: 'json',
-			success: function(result){
-				console.log(result);
+			success: function(response){
+				console.log(response);
 			}
 		})
 	});
