@@ -6,11 +6,11 @@ ASD 1301
 $('#home').on('pageinit', function(){
 	$('#jsonRec').on('click', function(){
 		$.ajax({
-			url: 'data/data.json',
-			type: 'get',
+			url: 'xhr/data.json',
+			type: 'GET',
 			dataType: 'json',
-			success: function(result){
-				console.log(result);
+			success: function(data, status){
+				console.log(status, data);
 			}
 		})
 	});
