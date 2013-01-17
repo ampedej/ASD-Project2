@@ -9,13 +9,8 @@ $('#home').on('pageinit', function(){
 			url: 'xhr/data.json',
 			type: 'GET',
 			dataType: 'json',
-			success: function(response){
-				for(var i=o, j=response.recipes.length; i<j; i++){
-					var rec = response.recipes[i];
-					$(''+
-						'<li>' + rec.rname[0] + '</li>'
-					).appnedTo('#jsondata');
-				}
+			success: function(result){
+				console.log(result);
 			}
 		})
 	});
