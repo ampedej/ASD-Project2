@@ -19,6 +19,24 @@
 		"rdirections": ["Recipe Instructions:", "Bake ravioli at temp. Add sauce and continue baking."]
 	},
 	{
+		"rname": ["Recipe Name:", "Chicken Parm"],
+		"dateadded": ["Date Added:", "10/16/2012"],
+		"rating": ["Rating:", "5"],
+		"category": ["Category:", "Meat"],
+		"rtype": ["Recipe Type:", "Chicken"],
+		"ringredients": ["Recipe Ingredients:", "Chicken breast, Seasoning, Garlic"],
+		"rdirections": ["Recipe Instructions:", "Preheat oven to 425. Rub chicken with seasoning and garlic. Place in oven"]
+	},
+	{
+		"rname": ["Recipe Name:", "Best Ravioli"],
+		"dateadded": ["Date Added:", "10/15/2012"],
+		"rating": ["Rating:", "4"],
+		"category": ["Category:", "Pasta"],
+		"rtype": ["Recipe Type:", "Ravioli"],
+		"ringredients": ["Recipe Ingredients:", "Raviolis, Red Sauce"],
+		"rdirections": ["Recipe Instructions:", "Bake ravioli at temp. Add sauce and continue baking."]
+	},
+	{
 		"rname": ["Recipe Name:", "Homemade Chili"],
 		"dateadded": ["Date Added:", "10/14/2012"],
 		"rating": ["Rating:", "3"],
