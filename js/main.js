@@ -3,6 +3,7 @@ Project 2
 Edward M Murray Jr
 ASD 1301
 */
+//
 $('#home').on('pageinit', function(){
 	$('#jsonRec').on('click', function(){
 		$.ajax({
@@ -10,7 +11,33 @@ $('#home').on('pageinit', function(){
 			type: 'GET',
 			dataType: 'json',
 			success: function(response){
-				console.log(response);
+				for(var i=0, j=response.recipes.length; i<j; i++){
+					var rec = response.recipes[i];
+					$('' + 
+						'<ul>'+ 
+							'<li>' + rec.rname[0] + ' ' + rec.rname[1] + '</li>' +
+							'<li>' + rec.dateadded[0] + ' ' + rec.dateadded[1] + '</li>' +
+							'<li>' + rec.rating[0] + ' ' + rec.rating[1] + '</li>' +
+							'<li>' + rec.category[0] + ' ' + rec.category[1] + '</li>' +
+							'<li>' + rec.rtype[0] + ' ' + rec.rtype[1] + '</li>' +
+							'<li>' + rec.ringredients[0] + ' ' + rec.ringredients[1] + '</li>' +
+							'<li>' + rec.rdirections[0] + ' ' + rec.rdirections[1] + '</li>' + 						'<ul>' ).appendTo('#jsondata');
+				}
+			}
+		})
+	});
+	$('#csvRec').on('click', function(){
+		$.ajax({
+			url: 'xhr/data.csv',
+			type: 'GET',
+			dataType: 'csv',
+			success: function(data){
+				var lines = data.split("\n");
+				for (var lineNum = 0; lineNum < lines.length; lineNum ++){
+					var row = lines[lineNum];
+					var columns = row.split(",");
+					$('' + '<ul>'+ '<li>' + row + '</li>' + '<ul>' + '<br>' ).appendTo('#csvdata');
+				}
 			}
 		})
 	});
