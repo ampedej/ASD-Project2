@@ -13,8 +13,7 @@ $('#home').on('pageinit', function(){
 			success: function(response){
 				for(var i=0, j=response.recipes.length; i<j; i++){
 					var rec = response.recipes[i];
-					$('' + 
-						'<ul>'+ 
+					$('<ul>'+ 
 							'<li>' + rec.rname[0] + ' ' + rec.rname[1] + '</li>' +
 							'<li>' + rec.dateadded[0] + ' ' + rec.dateadded[1] + '</li>' +
 							'<li>' + rec.rating[0] + ' ' + rec.rating[1] + '</li>' +
@@ -30,14 +29,36 @@ $('#home').on('pageinit', function(){
 		$.ajax({
 			url: 'xhr/data.csv',
 			type: 'GET',
-			dataType: 'csv',
+			dataType: 'text',
 			success: function(data){
 				var lines = data.split("\n");
 				for (var lineNum = 0; lineNum < lines.length; lineNum ++){
 					var row = lines[lineNum];
 					var columns = row.split(",");
-					$('' + '<ul>'+ '<li>' + row + '</li>' + '<ul>' + '<br>' ).appendTo('#csvdata');
+					$('<ul>'+ '<li>' + columns[0] + row[0] + '</li>' + '<ul>' ).appendTo('#csvdata');//Got it working but can't wrap my head around formatting it on the page.
 				}
+			}
+		})
+	});
+	
+	$('#xmlRec').on('click', function(){
+		$.ajax({
+			url: 'xhr/data.xml',
+			type: 'GET',
+			dataType: 'xml',
+			success: function(xml){
+				$(xml).find("recipe").each(function(){
+					var item = $(this);
+					$('#xmldata').append($( '<ul>' + 
+						'<li>Name: ' + item.find("rname").text() + '</li>' +
+						'<li>Date Added: ' + item.find("dateadded").text() + '</li>' +
+						'<li>Rating: ' + item.find("rating").text() + '</li>' +
+						'<li>Category: ' + item.find("category").text() + '</li>' +
+						'<li>Type: ' + item.find("rtype").text() + '</li>' +
+						'<li>Ingredients: ' + item.find("ringredients").text() + '</li>' +
+						'<li>Directions: ' + item.find("rdirection").text() + '</li>' + 
+						'</ul>'));
+				});
 			}
 		})
 	});

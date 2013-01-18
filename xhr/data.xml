@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <recipes>
+    <recipe>
+        <rname>Chicken Parm</rname>
+        <dateadded>10/16/2012</dateadded>
+        <rating>5</rating>
+        <category>Meat</category>
+        <rtype>Chicken</rtype>
+        <ringredients>Chicken breast, Seasoning, Garlic</ringredients>
+        <rdirections>Preheat oven to 425. Rub chicken with seasoning and garlic. Place in oven</rdirections>
+    </recipe>
+</recipes>
